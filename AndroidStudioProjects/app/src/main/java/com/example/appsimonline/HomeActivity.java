@@ -29,6 +29,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
+import java.lang.reflect.Type;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 import io.paperdb.Paper;
 
@@ -57,10 +59,12 @@ public class HomeActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+
+                    Intent intent = new Intent(HomeActivity.this, CartActivity.class);
+                    startActivity(intent);
             }
         });
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -170,7 +174,8 @@ public class HomeActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_cart) {
-            // Handle the camera action
+            Intent intent = new Intent(HomeActivity.this, CartActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_oders) {
 
         } else if (id == R.id.nav_categories) {
