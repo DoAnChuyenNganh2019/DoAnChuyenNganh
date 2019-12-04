@@ -53,18 +53,18 @@ public class CartActivity extends AppCompatActivity {
         txtMsg1 = (TextView) findViewById(R.id.msg1);
 
 
-//        NextProcessBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view)
-//            {
-//                txtTotalAmount.setText("Total Price = $" + String.valueOf(overTotalPrice));
-//
-//                Intent intent = new Intent(CartActivity.this, ConfirmFinalOrderActivity.class);
-//                intent.putExtra("Total Price", String.valueOf(overTotalPrice));
-//                startActivity(intent);
-//                finish();
-//            }
-//        });
+        NextProcessBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                txtTotalAmount.setText("Total Price = $" + String.valueOf(overTotalPrice));
+
+                Intent intent = new Intent(CartActivity.this, ConfirmFinalOrderActivity.class);
+                intent.putExtra("Total Price", String.valueOf(overTotalPrice));
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
     @Override
@@ -89,12 +89,12 @@ public class CartActivity extends AppCompatActivity {
             @Override
             protected void onBindViewHolder(@NonNull CartViewHolder holder, int position, @NonNull final Cart model)
             {
-                holder.txtProductQuantity.setText("Số lượng = " + model.getQuantity());
-                holder.txtProductPrice.setText("Giá " + model.getPrice() + " VNĐ");
+                holder.txtProductQuantity.setText("Quantity = " + model.getQuantity());
+                holder.txtProductPrice.setText("Price " + model.getPrice() + "$");
                 holder.txtProductName.setText(model.getPname());
 
-                int oneTyprProductTPrice = ((Integer.valueOf(model.getPrice()))) * Integer.valueOf(model.getQuantity());
-                overTotalPrice = overTotalPrice + oneTyprProductTPrice;
+                int oneTypeProductPrice = ((Integer.valueOf(model.getPrice()))) * Integer.valueOf(model.getQuantity());
+                overTotalPrice = overTotalPrice + oneTypeProductPrice;
 
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -102,8 +102,8 @@ public class CartActivity extends AppCompatActivity {
                     {
                         CharSequence options[] = new CharSequence[]
                                 {
-                                        "Chỉnh sửa",
-                                        "Gỡ bỏ"
+                                        "Sua san pham",
+                                        "Xoa san pham"
                                 };
                         AlertDialog.Builder builder = new AlertDialog.Builder(CartActivity.this);
                         builder.setTitle("Cart Options:");
@@ -131,7 +131,7 @@ public class CartActivity extends AppCompatActivity {
                                                 {
                                                     if (task.isSuccessful())
                                                     {
-                                                        Toast.makeText(CartActivity.this, "Sản phẩm đã được gỡ bỏ!", Toast.LENGTH_SHORT).show();
+                                                        Toast.makeText(CartActivity.this, "Item removed successfully.", Toast.LENGTH_SHORT).show();
 
                                                         Intent intent = new Intent(CartActivity.this, HomeActivity.class);
                                                         startActivity(intent);

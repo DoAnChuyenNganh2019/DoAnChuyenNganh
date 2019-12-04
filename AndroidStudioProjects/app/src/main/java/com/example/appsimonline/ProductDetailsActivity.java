@@ -106,17 +106,14 @@ public class ProductDetailsActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task)
                     {
-                        if (task.isSuccessful())
-                        {
+                        if (task.isSuccessful()) {
                             cartListRef.child("Admin View").child(Prevalent.currentOnlineUser.getPhone())
                                     .child("Products").child(productID)
                                     .updateChildren(cartMap)
                                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
-                                        public void onComplete(@NonNull Task<Void> task)
-                                        {
-                                            if (task.isSuccessful())
-                                            {
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            if (task.isSuccessful()) {
                                                 Toast.makeText(ProductDetailsActivity.this, "Đã thêm vào giỏ hàng!.", Toast.LENGTH_SHORT).show();
 
                                                 Intent intent = new Intent(ProductDetailsActivity.this, HomeActivity.class);
@@ -124,8 +121,10 @@ public class ProductDetailsActivity extends AppCompatActivity {
                                             }
                                         }
                                     });
+                            }
                         }
-                    }
+
+
                 });
     }
 //
