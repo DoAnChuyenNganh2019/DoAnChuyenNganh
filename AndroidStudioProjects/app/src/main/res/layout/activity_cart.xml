@@ -18,7 +18,7 @@
             android:id="@+id/total_price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Total Price = "
+            android:text="Tổng tiền =  "
             android:textColor="@android:color/white"
             android:textSize="20dp"
             android:textAlignment="center"
@@ -57,7 +57,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@color/colorPrimaryDark"
-        android:text="Next"
+        android:text="Thanh toán"
         android:textColor="@android:color/white"
         android:textSize="20dp"
         />

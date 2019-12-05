@@ -13,7 +13,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="27dp"
-        android:text="Add New Product"
+        android:text="Thêm sim mới"
         android:textAlignment="center"
         android:textSize="26sp"
         android:textStyle="bold"
@@ -34,38 +34,84 @@
         android:layout_marginRight="10dp">
 
         <ImageView
-            android:id="@+id/t_shirts"
+            android:id="@+id/sim4g"
             android:layout_width="wrap_content"
             android:layout_height="80dp"
-            android:src="@drawable/tshirts"
+            android:src="@drawable/sim4g"
             />
 
         <ImageView
-            android:id="@+id/sports_t_shirts"
+            android:id="@+id/sim3g"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/sports"
+            android:src="@drawable/sim3g"
             />
 
         <ImageView
-            android:id="@+id/shoes"
+            android:id="@+id/sim5g"
             android:layout_width="70dp"
             android:layout_height="80dp"
-            android:src="@drawable/shoess"
+            android:src="@drawable/sim5g"
             android:layout_marginStart="16dp"
             />
 
         <ImageView
-            android:id="@+id/sweathers"
+            android:id="@+id/simsodep"
             android:layout_width="90dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/sweather"
+            android:src="@drawable/simsodep"
             />
+
+
 
     </LinearLayout>
 
 
+    <Button
+        android:id="@+id/maintain_btn"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_above="@+id/check_orders_btn"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Bảo hành"
+        android:textColor="@android:color/white"
+        android:textSize="20dp"
+        android:textAllCaps="false"
+        />
 
+    <Button
+        android:id="@+id/check_orders_btn"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_above="@+id/admin_logout_btn"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Xét duyệt Sim mới"
+        android:textColor="@android:color/white"
+        android:textSize="20dp"
+        android:textAllCaps="false"
+        />
+
+
+    <Button
+        android:id="@+id/admin_logout_btn"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="15dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Đăng xuất"
+        android:textColor="@android:color/white"
+        android:textSize="20dp"
+        android:textAllCaps="false"
+        />
 
 
 
