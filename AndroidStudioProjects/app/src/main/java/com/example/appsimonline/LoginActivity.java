@@ -62,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
-                LoginButton.setText("Đăng nhập ADMIN");
+                LoginButton.setText("Dang nhap Admins");
                 AdminLink.setVisibility(View.INVISIBLE);
                 NotAdminLink.setVisibility(View.VISIBLE);
                 parentDbName = "Admins";
@@ -73,7 +73,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
-                LoginButton.setText("Đăng nhập USERS");
+                LoginButton.setText("Dang nhap");
                 AdminLink.setVisibility(View.VISIBLE);
                 NotAdminLink.setVisibility(View.INVISIBLE);
                 parentDbName = "Users";
@@ -145,7 +145,7 @@ public class LoginActivity extends AppCompatActivity {
                             }
                             else if (parentDbName.equals("Users"))
                             {
-                                Toast.makeText(LoginActivity.this, "Đăng nhập tài khoản" +phone+" thành công!!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, "Đăng nhập thành công!!", Toast.LENGTH_SHORT).show();
                                 loadingBar.dismiss();
 
                                 Intent intent = new Intent(LoginActivity.this, HomeActivity.class);

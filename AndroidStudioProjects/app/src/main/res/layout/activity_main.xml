@@ -26,7 +26,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginEnd="80dp"
         android:layout_marginTop="142dp"
-        android:text="Tìm, mua và khám phá các loại sim hợp với bạn nhất"
+        android:text="Find, Discover, Choose and Buy anything online."
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
         android:textSize="25sp"
@@ -47,7 +47,7 @@
         android:padding="20dp"
         android:textAllCaps="false"
         android:textSize="18sp"
-        android:text="Đăng nhập ngay"
+        android:text="Already have an Account? Login"
         android:textColor="@android:color/white"
         />
 
@@ -63,7 +63,7 @@
         android:padding="20dp"
         android:textAllCaps="false"
         android:textSize="18sp"
-        android:text="Đăng kí ngay"
+        android:text="Join Now"
         android:textColor="@android:color/white"
         />
 

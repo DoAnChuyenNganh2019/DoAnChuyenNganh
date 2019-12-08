@@ -1,7 +1,6 @@
 package com.example.appsimonline;
 
 import android.content.Intent;
-import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -54,21 +53,20 @@ public class ConfirmFinalOrderActivity extends AppCompatActivity {
     }
 
     private void Check() {
-        if(TextUtils.isEmpty(nameEdiText.getText().toString()))
-        {
-            Toast.makeText(this, "Vui long dien day du ten ", Toast.LENGTH_SHORT).show();
+        if (TextUtils.isEmpty(nameEdiText.getText().toString())) {
+            Toast.makeText(this, "Vui long cung cap ten day du", Toast.LENGTH_SHORT).show();
         }
-        else if(TextUtils.isEmpty(phoneEditText.getText().toString()))
+        else if (TextUtils.isEmpty(phoneEditText.getText().toString()))
         {
-            Toast.makeText(this, "Vui long dien so dien thoai", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Vui long cung cap so dien thoai", Toast.LENGTH_SHORT).show();
         }
-        else if(TextUtils.isEmpty(addressEditText.getText().toString()))
+        else if (TextUtils.isEmpty(addressEditText.getText().toString()))
         {
-            Toast.makeText(this, "Vui long dien dia chi ", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Vui long cung cap dia chi", Toast.LENGTH_SHORT).show();
         }
-        else if(TextUtils.isEmpty(cityEditText.getText().toString()))
+        else if (TextUtils.isEmpty(cityEditText.getText().toString()))
         {
-            Toast.makeText(this, "Vui long dien ten thanh pho", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Vui long cung cap ten thanh pho", Toast.LENGTH_SHORT).show();
         }
         else
         {
@@ -77,7 +75,8 @@ public class ConfirmFinalOrderActivity extends AppCompatActivity {
     }
 
     private void ConfirmOrder() {
-        String saveCurrentTime, saveCurrentDate;
+
+        final String saveCurrentTime, saveCurrentDate;
 
         Calendar calForDate = Calendar.getInstance();
         SimpleDateFormat currentDate = new SimpleDateFormat("MMM dd, yyyy");
@@ -86,7 +85,7 @@ public class ConfirmFinalOrderActivity extends AppCompatActivity {
         SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss a");
         saveCurrentTime = currentDate.format(calForDate.getTime());
 
-        final DatabaseReference orderRef = FirebaseDatabase.getInstance().getReference()
+        final DatabaseReference orderRef = FirebaseDatabase.getInstance().getReference().child("Orders")
                 .child("Orders")
                 .child(Prevalent.currentOnlineUser.getPhone());
 
@@ -98,12 +97,12 @@ public class ConfirmFinalOrderActivity extends AppCompatActivity {
         ordersMap.put("city", cityEditText.getText().toString());
         ordersMap.put("date", saveCurrentDate);
         ordersMap.put("time", saveCurrentTime);
-        ordersMap.put("state","not shipped");
+        ordersMap.put("state", "not shipped");
 
         orderRef.updateChildren(ordersMap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
-                if(task.isSuccessful())
+                if (task.isSuccessful())
                 {
                     FirebaseDatabase.getInstance().getReference()
                             .child("Cart List")
@@ -113,9 +112,8 @@ public class ConfirmFinalOrderActivity extends AppCompatActivity {
                             .addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
-                                    if(task.isSuccessful())
-                                    {
-                                        Toast.makeText(ConfirmFinalOrderActivity.this, "Don hang cuoi cung cua ban da dat thanh cong", Toast.LENGTH_SHORT).show();
+                                    if(task.isSuccessful()){
+                                        Toast.makeText(ConfirmFinalOrderActivity.this, "Don hang cua ban da dat thanh cong!!", Toast.LENGTH_SHORT).show();
 
                                         Intent intent = new Intent(ConfirmFinalOrderActivity.this, HomeActivity.class);
                                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);

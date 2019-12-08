@@ -89,8 +89,8 @@ public class CartActivity extends AppCompatActivity {
             @Override
             protected void onBindViewHolder(@NonNull CartViewHolder holder, int position, @NonNull final Cart model)
             {
-                holder.txtProductQuantity.setText("Số lượng = " + model.getQuantity());
-                holder.txtProductPrice.setText("Giá " + model.getPrice() + "$");
+                holder.txtProductQuantity.setText("Quantity = " + model.getQuantity());
+                holder.txtProductPrice.setText("Price " + model.getPrice() + "VND");
                 holder.txtProductName.setText(model.getPname());
 
                 int oneTypeProductPrice = ((Integer.valueOf(model.getPrice()))) * Integer.valueOf(model.getQuantity());
@@ -98,28 +98,24 @@ public class CartActivity extends AppCompatActivity {
 
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
-                    public void onClick(View view)
-                    {
+                    public void onClick(View view) {
                         CharSequence options[] = new CharSequence[]
                                 {
                                         "Sua san pham",
                                         "Xoa san pham"
                                 };
                         AlertDialog.Builder builder = new AlertDialog.Builder(CartActivity.this);
-                        builder.setTitle("Tuy chinh gio hang:");
+                        builder.setTitle("Cart Options:");
 
                         builder.setItems(options, new DialogInterface.OnClickListener() {
                             @Override
-                            public void onClick(DialogInterface dialogInterface, int i)
-                            {
-                                if (i == 0)
-                                {
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                if (i == 0) {
                                     Intent intent = new Intent(CartActivity.this, ProductDetailsActivity.class);
                                     intent.putExtra("pid", model.getPid());
                                     startActivity(intent);
                                 }
-                                if (i == 1)
-                                {
+                                if (i == 1) {
                                     cartListRef.child("User View")
                                             .child(Prevalent.currentOnlineUser.getPhone())
                                             .child("Products")
@@ -127,22 +123,21 @@ public class CartActivity extends AppCompatActivity {
                                             .removeValue()
                                             .addOnCompleteListener(new OnCompleteListener<Void>() {
                                                 @Override
-                                                public void onComplete(@NonNull Task<Void> task)
-                                                {
-                                                    if (task.isSuccessful())
-                                                    {
-                                                        Toast.makeText(CartActivity.this, "San pham da duoc xoa di!!.", Toast.LENGTH_SHORT).show();
+                                                public void onComplete(@NonNull Task<Void> task) {
+                                                    if (task.isSuccessful()) {
+                                                        Toast.makeText(CartActivity.this, "Item removed successfully.", Toast.LENGTH_SHORT).show();
 
                                                         Intent intent = new Intent(CartActivity.this, HomeActivity.class);
                                                         startActivity(intent);
                                                     }
                                                 }
                                             });
+                                    }
                                 }
-                            }
                         });
                         builder.show();
                     }
+
                 });
             }
 
@@ -160,49 +155,50 @@ public class CartActivity extends AppCompatActivity {
         adapter.startListening();
     }
 
-    private void CheckOrderState() {
-        DatabaseReference odersRef;
-        odersRef = FirebaseDatabase.getInstance().getReference().child("Orders").child(Prevalent.currentOnlineUser.getPhone());
 
-        odersRef.addValueEventListener(new ValueEventListener() {
+
+    private void CheckOrderState()
+    {
+        DatabaseReference ordersRef;
+        ordersRef = FirebaseDatabase.getInstance().getReference().child("Orders").child(Prevalent.currentOnlineUser.getPhone());
+
+        ordersRef.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot.exists()) {
+            public void onDataChange(DataSnapshot dataSnapshot)
+            {
+                if (dataSnapshot.exists())
+                {
                     String shippingState = dataSnapshot.child("state").getValue().toString();
                     String userName = dataSnapshot.child("name").getValue().toString();
 
-                    if (shippingState.equals("shipped")) {
-                        txtTotalAmount.setText(("Than chao" + userName + "\n don hang cua ban da chuyen den thanh cong!!."));
+                    if (shippingState.equals("shipped"))
+                    {
+                        txtTotalAmount.setText("Dear " + userName + "\n order is shipped successfully.");
                         recyclerView.setVisibility(View.GONE);
 
                         txtMsg1.setVisibility(View.VISIBLE);
-                        txtMsg1.setText("Chuc mung!! Don hang cua ban da duoc van chuyen thanh cong. Ban se nhan duoc Sim trong thoi gian som nhat ");
+                        txtMsg1.setText("Congratulations, your final order has been Shipped successfully. Soon you will received your order at your door step.");
                         NextProcessBtn.setVisibility(View.GONE);
 
-                        Toast.makeText(CartActivity.this, "Ban co the thanh toan them Sim, khi ban nhan duoc don hang truoc day!!", Toast.LENGTH_SHORT).show();
-                    } else if (shippingState.equals("not shipped")) {
-                        txtTotalAmount.setText("Trang thai van chuyen : Chua den ");
+                        Toast.makeText(CartActivity.this, "you can purchase more products, once you received your first final order.", Toast.LENGTH_SHORT).show();
+                    }
+                    else if(shippingState.equals("not shipped"))
+                    {
+                        txtTotalAmount.setText("Shipping State = Not Shipped");
                         recyclerView.setVisibility(View.GONE);
 
-                        txtMsg1.setVisibility(View.GONE);
+                        txtMsg1.setVisibility(View.VISIBLE);
                         NextProcessBtn.setVisibility(View.GONE);
 
-                        Toast.makeText(CartActivity.this, "Ban co the thanh toan them Sim, khi ban nhan duoc don hang truoc day!!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CartActivity.this, "you can purchase more products, once you received your first final order.", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
 
-
-
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
-
             }
-
-            });
-        }
+        });
     }
-
-
-
+}

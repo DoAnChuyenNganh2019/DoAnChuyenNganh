@@ -9,10 +9,11 @@ import android.widget.ImageView;
 
 public class AdminCategoryActivity extends AppCompatActivity {
 
-    private ImageView sim3g, sim4g, sim5g, simsodep;
-    private Button LogoutBtn, CheckOrderBtn;
+    private ImageView tShirts, sportsTShirts, shoes, sweathers;
 //    private ImageView glasses, hatsCaps, walletsBagsPurses, shoes;
 //    private ImageView headPhonesHandFree, Laptops, watches, mobilePhones;
+
+    private Button LogoutBtn, CheckOrdersBtn;
 
 
     @Override
@@ -21,38 +22,37 @@ public class AdminCategoryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_admin_category);
 
         LogoutBtn = (Button) findViewById(R.id.admin_logout_btn);
-        CheckOrderBtn = (Button) findViewById(R.id.check_orders_btn);
+        CheckOrdersBtn = (Button) findViewById(R.id.check_orders_btn);
+
 
         LogoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(AdminCategoryActivity.this, MainActivity.class);
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminCategoryActivity.this,MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
                 finish();
             }
         });
 
-        CheckOrderBtn.setOnClickListener(new View.OnClickListener() {
+        CheckOrdersBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(AdminCategoryActivity.this, AdminNewOrdersActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminCategoryActivity.this,AdminNewOrdersActivity.class);
                 startActivity(intent);
-                finish();
             }
         });
 
 
-        sim3g = (ImageView) findViewById(R.id.sim3g);
-        sim4g = (ImageView) findViewById(R.id.sim4g);
+        tShirts = (ImageView) findViewById(R.id.t_shirts);
+        sportsTShirts = (ImageView) findViewById(R.id.sports_t_shirts);
 //        femaleDresses = (ImageView) findViewById(R.id.female_dresses);
-        sim5g = (ImageView) findViewById(R.id.sim5g);
+        sweathers = (ImageView) findViewById(R.id.sweathers);
 
 //        glasses = (ImageView) findViewById(R.id.glasses);
 //        hatsCaps = (ImageView) findViewById(R.id.hats_caps);
 //        walletsBagsPurses = (ImageView) findViewById(R.id.purses_bags_wallets);
-        simsodep = (ImageView) findViewById(R.id.simsodep);
+        shoes = (ImageView) findViewById(R.id.shoes);
 
 //        headPhonesHandFree = (ImageView) findViewById(R.id.headphones_handfree);
 //        Laptops = (ImageView) findViewById(R.id.laptop_pc);
@@ -60,23 +60,23 @@ public class AdminCategoryActivity extends AppCompatActivity {
 //        mobilePhones = (ImageView) findViewById(R.id.mobilephones);
 
 
-        sim3g.setOnClickListener(new View.OnClickListener() {
+        tShirts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
             {
                 Intent intent = new Intent(AdminCategoryActivity.this, AdminAddNewProductActivity.class);
-                intent.putExtra("category", "Sim3g");
+                intent.putExtra("category", "tShirts");
                 startActivity(intent);
             }
         });
 
 
-        sim4g.setOnClickListener(new View.OnClickListener() {
+        sportsTShirts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
             {
                 Intent intent = new Intent(AdminCategoryActivity.this, AdminAddNewProductActivity.class);
-                intent.putExtra("category", "Sim4g");
+                intent.putExtra("category", "Sports tShirts");
                 startActivity(intent);
             }
         });
@@ -93,12 +93,12 @@ public class AdminCategoryActivity extends AppCompatActivity {
 //        });
 
 
-        sim5g.setOnClickListener(new View.OnClickListener() {
+        sweathers.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
             {
                 Intent intent = new Intent(AdminCategoryActivity.this, AdminAddNewProductActivity.class);
-                intent.putExtra("category", "Sim5g");
+                intent.putExtra("category", "Sweathers");
                 startActivity(intent);
             }
         });
@@ -138,12 +138,12 @@ public class AdminCategoryActivity extends AppCompatActivity {
 //        });
 //
 //
-        simsodep.setOnClickListener(new View.OnClickListener() {
+        shoes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
             {
                 Intent intent = new Intent(AdminCategoryActivity.this, AdminAddNewProductActivity.class);
-                intent.putExtra("category", "Sim số đẹp");
+                intent.putExtra("category", "Shoes");
                 startActivity(intent);
             }
         });

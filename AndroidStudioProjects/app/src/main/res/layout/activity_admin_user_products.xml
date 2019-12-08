@@ -4,19 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AdminNewOrdersActivity">
+    tools:context=".AdminUserProductsActivity">
 
     <RelativeLayout
-        android:id="@+id/r2"
+        android:id="@+id/r3"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:background="@color/colorPrimaryDark"
         android:layout_alignParentTop="true">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Don hang moi"
+            android:text="San pham"
             android:textColor="@android:color/white"
             android:textSize="25dp"
             android:textAlignment="center"
@@ -27,10 +27,10 @@
 
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/orders_list"
+        android:id="@+id/products_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/r2">
+        android:layout_below="@+id/r3">
     </android.support.v7.widget.RecyclerView>
 
 </RelativeLayout>

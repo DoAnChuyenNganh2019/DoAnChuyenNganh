@@ -212,7 +212,7 @@ public class SettinsActivity extends AppCompatActivity {
 
                                 progressDialog.dismiss();
 
-                                startActivity(new Intent(SettinsActivity.this, HomeActivity.class));
+                                startActivity(new Intent(SettinsActivity.this, MainActivity.class));
                                 Toast.makeText(SettinsActivity.this, "Thông tin cá nhân cập nhật thành công", Toast.LENGTH_SHORT).show();
                                 finish();
                             }

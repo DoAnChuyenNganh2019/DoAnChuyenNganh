@@ -13,7 +13,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="27dp"
-        android:text="Thêm sim mới"
+        android:text="Add New Product"
         android:textAlignment="center"
         android:textSize="26sp"
         android:textStyle="bold"
@@ -34,39 +34,36 @@
         android:layout_marginRight="10dp">
 
         <ImageView
-            android:id="@+id/sim4g"
+            android:id="@+id/t_shirts"
             android:layout_width="wrap_content"
             android:layout_height="80dp"
-            android:src="@drawable/sim4g"
+            android:src="@drawable/tshirts"
             />
 
         <ImageView
-            android:id="@+id/sim3g"
+            android:id="@+id/sports_t_shirts"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/sim3g"
+            android:src="@drawable/sports"
             />
 
         <ImageView
-            android:id="@+id/sim5g"
+            android:id="@+id/shoes"
             android:layout_width="70dp"
             android:layout_height="80dp"
-            android:src="@drawable/sim5g"
+            android:src="@drawable/shoess"
             android:layout_marginStart="16dp"
             />
 
         <ImageView
-            android:id="@+id/simsodep"
+            android:id="@+id/sweathers"
             android:layout_width="90dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/simsodep"
+            android:src="@drawable/sweather"
             />
 
 
-
     </LinearLayout>
-
-
     <Button
         android:id="@+id/maintain_btn"
         android:layout_width="match_parent"
@@ -76,7 +73,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginBottom="10dp"
         android:background="@color/colorPrimaryDark"
-        android:text="Bảo hành"
+        android:text="Xac nhan san pham"
         android:textColor="@android:color/white"
         android:textSize="20dp"
         android:textAllCaps="false"
@@ -91,7 +88,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginBottom="10dp"
         android:background="@color/colorPrimaryDark"
-        android:text="Xét duyệt Sim mới"
+        android:text="Kiem tra don hang moi"
         android:textColor="@android:color/white"
         android:textSize="20dp"
         android:textAllCaps="false"
@@ -105,13 +102,16 @@
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="200dp"
         android:background="@color/colorPrimaryDark"
-        android:text="Đăng xuất"
+        android:text="Dang xuat"
         android:textColor="@android:color/white"
         android:textSize="20dp"
         android:textAllCaps="false"
         />
+
+
+
 
 
 
