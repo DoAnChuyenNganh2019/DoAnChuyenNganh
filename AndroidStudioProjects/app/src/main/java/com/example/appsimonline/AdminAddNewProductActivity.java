@@ -135,8 +135,8 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
 
     private void StoreProductInformation()
     {
-        loadingBar.setTitle("Add New Product");
-        loadingBar.setMessage("Dear Admin, please wait while we are adding the new product.");
+        loadingBar.setTitle("Thêm sim mới");
+        loadingBar.setMessage("Admin vui lòng chờ tí!! Hệ thống đang đưa thông tin sim lên trang đăng");
         loadingBar.setCanceledOnTouchOutside(false);
         loadingBar.show();
 
@@ -168,7 +168,7 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot)
             {
-                Toast.makeText(AdminAddNewProductActivity.this, "Product Image uploaded Successfully...", Toast.LENGTH_SHORT).show();
+                Toast.makeText(AdminAddNewProductActivity.this, "Hình sản phẩm đã được tải lên thành công", Toast.LENGTH_SHORT).show();
 
                 Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
                     @Override
@@ -190,7 +190,7 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
                         {
                             downloadImageUrl = task.getResult().toString();
 
-                            Toast.makeText(AdminAddNewProductActivity.this, "got the Product image Url Successfully...", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(AdminAddNewProductActivity.this, "Đã lấy được Url thành công", Toast.LENGTH_SHORT).show();
 
                             SaveProductInfoToDatabase();
                         }

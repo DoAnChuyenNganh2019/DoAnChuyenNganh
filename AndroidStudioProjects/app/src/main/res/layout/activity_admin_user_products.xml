@@ -9,14 +9,14 @@
     <RelativeLayout
         android:id="@+id/r3"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:background="@color/colorPrimaryDark"
         android:layout_alignParentTop="true">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="San pham"
+            android:text="Danh sách sim được đặt"
             android:textColor="@android:color/white"
             android:textSize="25dp"
             android:textAlignment="center"

@@ -51,17 +51,12 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
         getProductDetails(productID);
 
-
         addToCartButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
-                if (state.equals("Order Placed") || state.equals("Order Shipped"))
-                {
-                    Toast.makeText(ProductDetailsActivity.this, "you can add purchase more products, once your order is shipped or confirmed.", Toast.LENGTH_LONG).show();
-                }
-                else
-                {
+            public void onClick(View view) {
+                if (state.equals("Order Placed") || state.equals("Order Shipped")) {
+                    Toast.makeText(ProductDetailsActivity.this, "Bạn có thẻ mua thêm khi đơn hàng được giao đến hoặc được xác thực.", Toast.LENGTH_LONG).show();
+                } else {
                     addingToCartList();
                 }
             }
@@ -70,15 +65,46 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
 
     @Override
-    protected void onStart()
-    {
+    protected void onStart() {
         super.onStart();
 
         CheckOrderState();
     }
 
-    private void addingToCartList()
-    {
+    private void CheckOrderState() {
+        DatabaseReference odersRef;
+        odersRef = FirebaseDatabase.getInstance().getReference().child("Orders").child(Prevalent.currentOnlineUser.getPhone());
+
+        odersRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    String shippingState = dataSnapshot.child("state").getValue().toString();
+
+                    if (shippingState.equals("shipped")) {
+
+                        state = "Order Shipped";
+
+                    } else if (shippingState.equals("not shipped")) {
+
+                        state = "Order Placed";
+
+                    }
+                }
+            }
+
+
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+
+            }
+
+        });
+    }
+
+    private void addingToCartList() {
         String saveCurrentTime, saveCurrentDate;
 
         Calendar calForDate = Calendar.getInstance();
@@ -104,8 +130,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
                 .updateChildren(cartMap)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
-                    public void onComplete(@NonNull Task<Void> task)
-                    {
+                    public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
                             cartListRef.child("Admin View").child(Prevalent.currentOnlineUser.getPhone())
                                     .child("Products").child(productID)
@@ -121,24 +146,22 @@ public class ProductDetailsActivity extends AppCompatActivity {
                                             }
                                         }
                                     });
-                            }
                         }
+                    }
 
 
                 });
     }
+
+    //
 //
-//
-    private void getProductDetails(String productID)
-    {
+    private void getProductDetails(String productID) {
         DatabaseReference productsRef = FirebaseDatabase.getInstance().getReference().child("Products");
 
         productsRef.child(productID).addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot)
-            {
-                if (dataSnapshot.exists())
-                {
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
                     Products products = dataSnapshot.getValue(Products.class);
 
                     productName.setText(products.getPname());
@@ -153,36 +176,6 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
             }
         });
-    }
 
-    private void CheckOrderState()
-    {
-        DatabaseReference ordersRef;
-        ordersRef = FirebaseDatabase.getInstance().getReference().child("Orders").child(Prevalent.currentOnlineUser.getPhone());
-
-        ordersRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot)
-            {
-                if (dataSnapshot.exists())
-                {
-                    String shippingState = dataSnapshot.child("state").getValue().toString();
-
-                    if (shippingState.equals("shipped"))
-                    {
-                        state = "Order Shipped";
-                    }
-                    else if(shippingState.equals("not shipped"))
-                    {
-                        state = "Order Placed";
-                    }
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
     }
 }

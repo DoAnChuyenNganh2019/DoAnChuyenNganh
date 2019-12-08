@@ -20,7 +20,7 @@
         android:text="Product Name"
         android:textColor="@android:color/black"
         android:textStyle="bold"
-        android:textSize="18sp"
+        android:textSize="30sp"
         android:gravity="center"
         android:layout_marginTop="10dp"/>
 
@@ -44,7 +44,7 @@
         android:text="Product Price"
         android:textColor="@android:color/black"
         android:textStyle="bold"
-        android:textSize="18sp"
+        android:textSize="30sp"
         android:gravity="center"
         android:layout_marginTop="10dp"/>
 
@@ -55,7 +55,7 @@
         android:elevation="6dp"
         app:textSize="16dp"
         app:initialNumber="1"
-        app:finalNumber="10"
+        app:finalNumber="1"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/product_price_details"
         android:layout_marginTop="10dp">
@@ -68,7 +68,7 @@
         android:background="@color/colorPrimaryDark"
         android:layout_margin="15dp"
         android:layout_alignParentBottom="true"
-        android:text="Thêm vào giỏ hàng"
+        android:text="Thêm sim vào giỏ hàng"
         android:textColor="@android:color/white"
         android:textSize="18dp"
         />

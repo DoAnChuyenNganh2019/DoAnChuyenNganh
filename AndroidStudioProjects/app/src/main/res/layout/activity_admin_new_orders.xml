@@ -16,7 +16,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Don hang moi"
+            android:text="Đơn hàng mới"
             android:textColor="@android:color/white"
             android:textSize="25dp"
             android:textAlignment="center"

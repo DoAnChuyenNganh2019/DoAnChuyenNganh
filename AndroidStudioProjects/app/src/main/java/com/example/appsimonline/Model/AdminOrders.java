@@ -1,36 +1,21 @@
 package com.example.appsimonline.Model;
 
 public class AdminOrders {
-    private String name, phone, address, city, state, date, time, totalAmount;
+    private String address, city, date, name, phone, state, time, totalAmount;
 
     public AdminOrders() {
+
     }
 
-    public AdminOrders(String name, String phone, String address, String city, String state, String date, String time, String totalAmount) {
-        this.name = name;
-        this.phone = phone;
+    public AdminOrders(String address, String city, String date, String name, String phone, String state, String time, String totalAmount) {
         this.address = address;
         this.city = city;
-        this.state = state;
         this.date = date;
+        this.name = name;
+        this.phone = phone;
+        this.state = state;
         this.time = time;
         this.totalAmount = totalAmount;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
     }
 
     public String getAddress() {
@@ -49,20 +34,36 @@ public class AdminOrders {
         this.city = city;
     }
 
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
-    }
-
     public String getDate() {
         return date;
     }
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
     }
 
     public String getTime() {
