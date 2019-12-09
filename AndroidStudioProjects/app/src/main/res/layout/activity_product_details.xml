@@ -68,7 +68,7 @@
         android:background="@color/colorPrimaryDark"
         android:layout_margin="15dp"
         android:layout_alignParentBottom="true"
-        android:text="Thêm sim vào giỏ hàng"
+        android:text="Thêm sim vào giỏ"
         android:textColor="@android:color/white"
         android:textSize="18dp"
         />

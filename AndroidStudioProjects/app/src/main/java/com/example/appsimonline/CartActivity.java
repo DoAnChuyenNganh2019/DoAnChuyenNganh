@@ -82,7 +82,7 @@ public class CartActivity extends AppCompatActivity {
                         .setQuery(cartListRef.child("User View")
                                 .child(Prevalent.currentOnlineUser.getPhone())
                                 .child("Products"), Cart.class)
-                        .build();
+                                .build();
 
         FirebaseRecyclerAdapter<Cart, CartViewHolder> adapter
                 = new FirebaseRecyclerAdapter<Cart, CartViewHolder>(options) {
@@ -90,7 +90,7 @@ public class CartActivity extends AppCompatActivity {
             protected void onBindViewHolder(@NonNull CartViewHolder holder, int position, @NonNull final Cart model)
             {
                 holder.txtProductQuantity.setText("Số lượng = " + model.getQuantity());
-                holder.txtProductPrice.setText("Giá " + model.getPrice() + "$");
+                holder.txtProductPrice.setText("Giá " + model.getPrice() + " VNĐ");
                 holder.txtProductName.setText(model.getPname());
 
                 int oneTypeProductPrice = ((Integer.valueOf(model.getPrice()))) * Integer.valueOf(model.getQuantity());
@@ -102,11 +102,11 @@ public class CartActivity extends AppCompatActivity {
                     {
                         CharSequence options[] = new CharSequence[]
                                 {
-                                        "Sua san pham",
-                                        "Xoa san pham"
+                                        "Sửa sản phẩm",
+                                        "Xóa sản phẩm"
                                 };
                         AlertDialog.Builder builder = new AlertDialog.Builder(CartActivity.this);
-                        builder.setTitle("Tuy chinh gio hang:");
+                        builder.setTitle("Tùy chỉnh giỏ hàng:");
 
                         builder.setItems(options, new DialogInterface.OnClickListener() {
                             @Override
@@ -131,7 +131,7 @@ public class CartActivity extends AppCompatActivity {
                                                 {
                                                     if (task.isSuccessful())
                                                     {
-                                                        Toast.makeText(CartActivity.this, "San pham da duoc xoa di!!.", Toast.LENGTH_SHORT).show();
+                                                        Toast.makeText(CartActivity.this, "Sản phẩm đã được xóa!!.", Toast.LENGTH_SHORT).show();
 
                                                         Intent intent = new Intent(CartActivity.this, HomeActivity.class);
                                                         startActivity(intent);
@@ -172,7 +172,7 @@ public class CartActivity extends AppCompatActivity {
                     String userName = dataSnapshot.child("name").getValue().toString();
 
                     if (shippingState.equals("shipped")) {
-                        txtTotalAmount.setText(("Than chao" + userName + "\n don hang cua ban da chuyen den thanh cong!!."));
+                        txtTotalAmount.setText(("Than chao " + userName + "\n Đơn hàng đã chuyển đến cho bạn  !!."));
                         recyclerView.setVisibility(View.GONE);
 
                         txtMsg1.setVisibility(View.VISIBLE);
