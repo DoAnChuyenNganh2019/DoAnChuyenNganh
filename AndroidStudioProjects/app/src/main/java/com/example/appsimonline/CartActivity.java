@@ -55,14 +55,17 @@ public class CartActivity extends AppCompatActivity {
         // Them su kien cho nút Thêm sim vào giỏ
         NextProcessBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
-                txtTotalAmount.setText("Total Price = $" + String.valueOf(overTotalPrice));
-
-                Intent intent = new Intent(CartActivity.this, ConfirmFinalOrderActivity.class);
-                intent.putExtra("Total Price", String.valueOf(overTotalPrice));
-                startActivity(intent);
-                finish();
+            public void onClick(View view) {
+                txtTotalAmount.setText( "Total Price = $" + String.valueOf( overTotalPrice ) );
+                if (overTotalPrice == 0) {
+                    Toast.makeText( CartActivity.this, "Vui lòng đặt sim trước khi thanh toán", Toast.LENGTH_SHORT ).show();
+                }
+                else {
+                    Intent intent = new Intent( CartActivity.this, ConfirmFinalOrderActivity.class );
+                    intent.putExtra( "Total Price", String.valueOf( overTotalPrice ) );
+                    startActivity( intent );
+                    finish();
+                }
             }
         });
     }
@@ -136,7 +139,7 @@ public class CartActivity extends AppCompatActivity {
                                                     {
                                                         Toast.makeText(CartActivity.this, "Sản phẩm đã được xóa!!.", Toast.LENGTH_SHORT).show();
 
-                                                        Intent intent = new Intent(CartActivity.this, HomeActivity.class);
+                                                        Intent intent = new Intent(CartActivity.this, CartActivity.class);
                                                         startActivity(intent);
                                                     }
                                                 }
