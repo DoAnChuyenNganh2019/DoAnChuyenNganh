@@ -66,6 +66,41 @@
 
     </LinearLayout>
 
+    <TextView
+
+        android:layout_width="50dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="40dp"
+        android:textStyle="bold"
+        android:text="Sim 4g" />
+
+    <TextView
+
+        android:layout_width="50dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="140dp"
+        android:textStyle="bold"
+        android:text="Sim 3g" />
+
+    <TextView
+
+        android:layout_width="50dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="240dp"
+        android:textStyle="bold"
+        android:text="Sim 5g" />
+
+    <TextView
+
+        android:layout_width="80dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="320dp"
+        android:textStyle="bold"
+        android:text="Sim số đẹp "/>
 
     <Button
         android:id="@+id/maintain_btn"

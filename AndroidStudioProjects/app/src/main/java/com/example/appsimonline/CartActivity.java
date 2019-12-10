@@ -52,7 +52,7 @@ public class CartActivity extends AppCompatActivity {
         txtTotalAmount = (TextView) findViewById(R.id.total_price);
         txtMsg1 = (TextView) findViewById(R.id.msg1);
 
-
+        // Them su kien cho nút Thêm sim vào giỏ
         NextProcessBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
@@ -86,6 +86,9 @@ public class CartActivity extends AppCompatActivity {
 
         FirebaseRecyclerAdapter<Cart, CartViewHolder> adapter
                 = new FirebaseRecyclerAdapter<Cart, CartViewHolder>(options) {
+
+            //Hiển thị sim trong giỏ hàng
+            // CHỉnh sửa giỏ hàng
             @Override
             protected void onBindViewHolder(@NonNull CartViewHolder holder, int position, @NonNull final Cart model)
             {
@@ -160,6 +163,8 @@ public class CartActivity extends AppCompatActivity {
         adapter.startListening();
     }
 
+
+    //Tạo chức năng kiểm duyệt đơn hàng đã ship chưa
     private void CheckOrderState() {
         DatabaseReference odersRef;
         odersRef = FirebaseDatabase.getInstance().getReference().child("Orders").child(Prevalent.currentOnlineUser.getPhone());

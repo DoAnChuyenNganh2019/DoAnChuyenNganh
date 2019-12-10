@@ -58,7 +58,7 @@ public class SearchProductsActivity extends AppCompatActivity {
 
         FirebaseRecyclerOptions<Products> options =
                 new FirebaseRecyclerOptions.Builder<Products>()
-                .setQuery( reference.orderByChild( "pname" ).startAt( SearchInput ),Products.class )
+                .setQuery( reference.orderByChild( "category").startAt( SearchInput ),Products.class )
                 .build();
 
 

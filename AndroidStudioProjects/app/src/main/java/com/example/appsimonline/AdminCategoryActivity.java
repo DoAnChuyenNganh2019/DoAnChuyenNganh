@@ -10,7 +10,7 @@ import android.widget.ImageView;
 public class AdminCategoryActivity extends AppCompatActivity {
 
     private ImageView sim3g, sim4g, sim5g, simsodep;
-    private Button LogoutBtn, CheckOrderBtn;
+    private Button LogoutBtn, CheckOrderBtn, maitainproductsBtn;
 //    private ImageView glasses, hatsCaps, walletsBagsPurses, shoes;
 //    private ImageView headPhonesHandFree, Laptops, watches, mobilePhones;
 
@@ -22,6 +22,17 @@ public class AdminCategoryActivity extends AppCompatActivity {
 
         LogoutBtn = (Button) findViewById(R.id.admin_logout_btn);
         CheckOrderBtn = (Button) findViewById(R.id.check_orders_btn);
+        maitainproductsBtn = (Button) findViewById( R.id.maintain_btn );
+
+        maitainproductsBtn.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminCategoryActivity.this, HomeActivity.class);
+                intent.putExtra( "Admin", "Admin" );
+                startActivity(intent);
+            }
+        } );
+
 
         LogoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override

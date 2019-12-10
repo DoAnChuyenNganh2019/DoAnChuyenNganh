@@ -72,10 +72,10 @@ public class ProductDetailsActivity extends AppCompatActivity {
     }
 
     private void CheckOrderState() {
-        DatabaseReference odersRef;
-        odersRef = FirebaseDatabase.getInstance().getReference().child("Orders").child(Prevalent.currentOnlineUser.getPhone());
+        DatabaseReference ordersRef;
+        ordersRef = FirebaseDatabase.getInstance().getReference().child("Orders").child(Prevalent.currentOnlineUser.getPhone());
 
-        odersRef.addValueEventListener(new ValueEventListener() {
+        ordersRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
