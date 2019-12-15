@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -20,6 +19,7 @@ import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.appsimonline.Admin.AdminMaintainProductsActivity;
 import com.example.appsimonline.Model.Products;
 import com.example.appsimonline.Prevalent.Prevalent;
 import com.example.appsimonline.ViewHolder.ProductViewHolder;
@@ -28,8 +28,6 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
-
-import java.lang.reflect.Type;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import io.paperdb.Paper;
