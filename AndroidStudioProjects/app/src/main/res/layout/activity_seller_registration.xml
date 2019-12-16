@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Sellers.SellerRegistrationActivity">
+
+    <ImageView
+        android:id="@+id/img_seller"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:src="@drawable/sellersregistion"
+        android:scaleType="centerCrop"
+        />
+    <TextView
+        android:id="@+id/seller_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mau dang ki kinh doanh"
+        android:gravity="center"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/img_seller"
+        android:layout_marginStart="20dp"
+        android:textStyle="bold"
+        android:textSize="24dp"
+        android:textColor="@color/xanhlachuoi"/>
+
+    <EditText
+        android:id="@+id/seller_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_below="@+id/seller_title"
+        android:hint="Ten cua ban..."
+        android:inputType="text"
+        android:textSize="16dp"
+        android:layout_marginTop="5dp"/>
+
+
+
+    <EditText
+        android:id="@+id/seller_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_below="@+id/seller_name"
+        android:hint="So dien thoai...."
+        android:inputType="number"
+        android:textSize="16dp"
+        android:layout_marginTop="5dp"/>
+
+    <EditText
+        android:id="@+id/seller_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_below="@+id/seller_phone"
+        android:hint="Email cua ban...."
+        android:inputType="textEmailAddress"
+        android:textSize="16dp"
+        android:layout_marginTop="5dp"/>
+
+    <EditText
+        android:id="@+id/seller_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_below="@+id/seller_email"
+        android:hint="Mat khau...."
+        android:inputType="text"
+        android:textSize="16dp"
+        android:layout_marginTop="5dp"/>
+
+    <EditText
+        android:id="@+id/seller_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_below="@+id/seller_password"
+        android:hint="Dia chi ho kinh doanh...."
+        android:inputType="textEmailAddress"
+        android:textSize="16dp"
+        android:layout_marginTop="5dp"/>
+
+    <Button
+        android:id="@+id/seller_register_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_above="@+id/seller_already_have_account_btn"
+        android:background="@color/xanhlachuoi"
+        android:text="Dang ki"
+        android:textAllCaps="false"
+        android:textSize="18dp"/>
+
+    <Button
+        android:id="@+id/seller_already_have_account_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/xanhla"
+        android:text="Toi da co tai khoan"
+        android:textAllCaps="false"
+        android:textSize="18dp"/>
+
+
+
+</RelativeLayout>

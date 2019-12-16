@@ -7,8 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.example.appsimonline.HomeActivity;
-import com.example.appsimonline.MainActivity;
+import com.example.appsimonline.Buyers.HomeActivity;
+import com.example.appsimonline.Buyers.MainActivity;
 import com.example.appsimonline.R;
 
 public class AdminCategoryActivity extends AppCompatActivity {

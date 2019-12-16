@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Sellers.SellerLoginActivity">
+
+
+    <ImageView
+        android:id="@+id/img_seller"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:src="@drawable/sellerslogin"
+        android:scaleType="centerCrop"
+        />
+
+    <TextView
+        android:id="@+id/title_login__seller"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nguoi ban dang nhap"
+        android:gravity="center"
+        android:layout_below="@id/img_seller"
+        android:layout_marginTop="30dp"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:textColor="@color/xanhlachuoi"/>
+
+
+
+
+    <EditText
+        android:id="@+id/seller_login_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_below="@id/title_login__seller"
+        android:layout_marginTop="10dp"
+        android:textSize="16dp"
+        android:hint="Email..."
+        android:inputType="textEmailAddress"
+        />
+
+    <EditText
+        android:id="@+id/seller_login_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_below="@id/seller_login_email"
+        android:layout_marginTop="10dp"
+        android:textSize="16dp"
+        android:hint="Mat khau..."
+        android:inputType="text"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/seller_login_password"
+        android:text="Dang nhap"
+        android:textSize="18dp"
+        android:textAllCaps="false"
+        android:background="@color/xanhlachuoi"/>
+</RelativeLayout>
