@@ -46,6 +46,12 @@ public class ResetPasswordActivity extends AppCompatActivity {
         question2 =  findViewById( R.id.question_2);
         verifyButton =  findViewById( R.id.verify_btn );
 
+        verifyButton.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                verifyUser();
+            }
+        } );
     }
 
     @Override

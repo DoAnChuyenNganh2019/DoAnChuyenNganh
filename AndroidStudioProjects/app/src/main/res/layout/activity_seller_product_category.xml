@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Sellers.SellerProductCategoryActivity">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Chào mừng nhà bán sim trở lại!!"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:textSize="28sp"
+        android:textColor="@color/xanhla"/>
+
+    <TextView
+        android:id="@+id/slogan_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"
+        android:text="Đăng bán sim mới"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        />
+
+
+
+    <LinearLayout
+        android:id="@+id/linear1_category_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/slogan_category"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+        <ImageView
+            android:id="@+id/sim4g"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:src="@drawable/sim4g"
+            />
+
+        <ImageView
+            android:id="@+id/sim3g"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/sim3g"
+            />
+
+        <ImageView
+            android:id="@+id/sim5g"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:src="@drawable/sim5g"
+            android:layout_marginStart="16dp"
+            />
+
+        <ImageView
+            android:id="@+id/simsodep"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/simsodep"
+            />
+
+
+
+    </LinearLayout>
+
+    <TextView
+
+        android:layout_width="50dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="380dp"
+        android:layout_marginLeft="38dp"
+        android:textStyle="bold"
+        android:text="Sim 4g" />
+
+    <TextView
+
+        android:layout_width="50dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="380dp"
+        android:layout_marginLeft="140dp"
+        android:textStyle="bold"
+        android:text="Sim 3g" />
+
+    <TextView
+
+        android:layout_width="50dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="380dp"
+        android:layout_marginLeft="240dp"
+        android:textStyle="bold"
+        android:text="Sim 5g" />
+
+    <TextView
+
+        android:layout_width="80dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="380dp"
+        android:layout_marginLeft="320dp"
+        android:textStyle="bold"
+        android:text="Sim số đẹp "/>
+
+
+
+
+
+</RelativeLayout>

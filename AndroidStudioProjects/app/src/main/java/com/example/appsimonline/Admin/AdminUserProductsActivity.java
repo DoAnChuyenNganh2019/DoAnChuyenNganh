@@ -16,6 +16,7 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.squareup.picasso.Picasso;
 
 public class AdminUserProductsActivity extends AppCompatActivity {
     private RecyclerView productsList;
@@ -57,6 +58,7 @@ public class AdminUserProductsActivity extends AppCompatActivity {
                 holder.txtProductQuantity.setText("Số lượng = " + model.getQuantity());
                 holder.txtProductPrice.setText("Giá " + model.getPrice() + " VND");
                 holder.txtProductName.setText(model.getPname());
+
 
             }
 

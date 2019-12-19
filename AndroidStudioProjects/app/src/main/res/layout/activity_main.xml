@@ -70,7 +70,7 @@
         android:id="@+id/seller_begin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Toi muon ban sim?"
+        android:text="Tôi muốn bán sim?"
         android:textSize="20dp"
         android:textStyle="bold"
         android:textColor="@color/xanhlachuoi"

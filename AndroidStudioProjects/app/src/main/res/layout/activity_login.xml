@@ -50,6 +50,24 @@
         android:textColorHint="@color/colorPrimaryDark"
         android:textSize="19sp"
         />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_password_input">
+
+        <CheckBox
+            android:id="@+id/main_show_password_ck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Material.Drawable.CheckBox"
+            android:text="Hiển thị mật khẩu"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_marginLeft="18dp"
+            />
+    </LinearLayout>
+
 
     <LinearLayout
         android:id="@+id/linear_layout_1"
@@ -57,7 +75,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_below="@+id/login_password_input"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="30dp"
         >
 
         <CheckBox
@@ -66,6 +84,7 @@
             android:layout_height="wrap_content"
             style="@style/Material.Drawable.CheckBox"
             android:text="Nhớ mật khẩu"
+            android:textStyle="bold"
             android:textColor="@color/colorPrimaryDark"
             app:cbd_strokeColor="@color/colorPrimaryDark"
             android:gravity="center_vertical"
@@ -80,6 +99,7 @@
             android:text="Quên mật khẩu?"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="19sp"
+            android:textStyle="bold"
             android:layout_marginLeft="70dp"
             />
 
@@ -98,6 +118,7 @@
         android:padding="17dp"
         android:textAllCaps="false"
         android:textSize="18sp"
+        android:textStyle="bold"
         android:text="Truy cập"
         android:textColor="@android:color/white"
         />
@@ -111,7 +132,7 @@
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/login_btn"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="20sp"
+        android:textSize="25sp"
         android:textStyle="bold"
         android:layout_marginLeft="80dp"
         android:layout_marginEnd="23dp"
@@ -126,7 +147,7 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/login_btn"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="20sp"
+        android:textSize="25sp"
         android:textStyle="bold"
         android:layout_marginLeft="80dp"
         android:layout_marginStart="25dp"

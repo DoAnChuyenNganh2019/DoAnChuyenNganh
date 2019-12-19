@@ -17,7 +17,7 @@
         android:id="@+id/seller_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Mau dang ki kinh doanh"
+        android:text="Đăng kí nhà bán sim"
         android:gravity="center"
         android:layout_margin="10dp"
         android:layout_below="@+id/img_seller"
@@ -33,7 +33,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_below="@+id/seller_title"
-        android:hint="Ten cua ban..."
+        android:hint="Tên của bạn..."
         android:inputType="text"
         android:textSize="16dp"
         android:layout_marginTop="5dp"/>
@@ -47,7 +47,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_below="@+id/seller_name"
-        android:hint="So dien thoai...."
+        android:hint="Số điện thoại...."
         android:inputType="number"
         android:textSize="16dp"
         android:layout_marginTop="5dp"/>
@@ -59,7 +59,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_below="@+id/seller_phone"
-        android:hint="Email cua ban...."
+        android:hint="Email của bạn...."
         android:inputType="textEmailAddress"
         android:textSize="16dp"
         android:layout_marginTop="5dp"/>
@@ -71,7 +71,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_below="@+id/seller_email"
-        android:hint="Mat khau...."
+        android:hint="Mật khẩu...."
         android:inputType="text"
         android:textSize="16dp"
         android:layout_marginTop="5dp"/>
@@ -83,7 +83,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_below="@+id/seller_password"
-        android:hint="Dia chi ho kinh doanh...."
+        android:hint="Địa chỉ kinh doanh...."
         android:inputType="textEmailAddress"
         android:textSize="16dp"
         android:layout_marginTop="5dp"/>
@@ -97,7 +97,7 @@
         android:layout_marginTop="10dp"
         android:layout_above="@+id/seller_already_have_account_btn"
         android:background="@color/xanhlachuoi"
-        android:text="Dang ki"
+        android:text="Đăng kí"
         android:textAllCaps="false"
         android:textSize="18dp"/>
 
@@ -110,7 +110,7 @@
         android:layout_marginTop="10dp"
         android:layout_alignParentBottom="true"
         android:background="@color/xanhla"
-        android:text="Toi da co tai khoan"
+        android:text="Đã có sẵn tài khoản"
         android:textAllCaps="false"
         android:textSize="18dp"/>
 

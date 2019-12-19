@@ -6,14 +6,17 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.appsimonline.Admin.AdminCategoryActivity;
+import com.example.appsimonline.Admin.AdminHomeActivity;
 import com.example.appsimonline.Model.Users;
 import com.example.appsimonline.Prevalent.Prevalent;
 import com.example.appsimonline.R;
@@ -33,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
     private TextView AdminLink, NotAdminLink, ForgetPasswordLink;
 
     private String parentDbName = "Users";
-    private CheckBox chkBoxRememberMe;
+    private CheckBox chkBoxRememberMe, chkBoxShowPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,9 +51,23 @@ public class LoginActivity extends AppCompatActivity {
         ForgetPasswordLink = findViewById( R.id.forget_password_link );
         loadingBar = new ProgressDialog(this);
 
-
+        chkBoxShowPassword = (CheckBox) findViewById( R.id.main_show_password_ck );
         chkBoxRememberMe = (CheckBox) findViewById(R.id.remember_me_chkb);
         Paper.init(this);
+
+        chkBoxShowPassword.setOnCheckedChangeListener( new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked)
+                {
+                    InputPassword.setTransformationMethod( HideReturnsTransformationMethod.getInstance() );
+                }
+                else
+                {
+                    InputPassword.setTransformationMethod( PasswordTransformationMethod.getInstance() );
+                }
+            }
+        } );
 
         ForgetPasswordLink.setOnClickListener( new View.OnClickListener() {
             @Override
@@ -152,7 +169,7 @@ public class LoginActivity extends AppCompatActivity {
                                 Toast.makeText(LoginActivity.this, "Chào mừng bạn đã đến trang Admin!!", Toast.LENGTH_SHORT).show();
                                 loadingBar.dismiss();
 
-                                Intent intent = new Intent(LoginActivity.this, AdminCategoryActivity.class);
+                                Intent intent = new Intent(LoginActivity.this, AdminHomeActivity.class);
                                 startActivity(intent);
                             }
                             else if (parentDbName.equals("Users"))
